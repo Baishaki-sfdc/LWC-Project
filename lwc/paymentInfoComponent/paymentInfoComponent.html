@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Payment Details"  icon-name="standard:groups">
+         
+        <lightning-input label="Card Number" type="number"  onchange={handlecard}></lightning-input>
+        <lightning-input label="Expiry Month" type="text"  onchange={handlemonth}></lightning-input>
+        <lightning-input label="Expiry Year" type="text"  onchange={handleyear}></lightning-input>
+        <lightning-input label="CVV" type="text"  onchange={handlecvv}></lightning-input>
+        <lightning-button label="Submit" variant="brand" onclick={createpayerguest}></lightning-button>
+        <!--<lightning-button label="send Mail" variant="brand" onclick={sendEmailAfterEvent}></lightning-button>-->
+        {label}
+    </lightning-card>
+    </template>

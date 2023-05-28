@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Search Hotels"  icon-name="standard:groups">
+     
+    <lightning-input label="City of Hotel" type="search" name="hcity" onchange={searchme}></lightning-input>
+   <!-- <lightning-input label="Type of Hotel" type="search" name="htype" onchange={searchmee}></lightning-input>-->
+ 
+    
+
+    <lightning-button label="SELECT" slot="actions" variant="brand-outline" onclick={handleme}></lightning-button>
+    <div if:true={recc}>
+      <lightning-datatable data={recc} 
+                           columns={columns} 
+                           key-field="id"></lightning-datatable>
+                           
+    </div>
+
+    <template if:true={hotelOptions.data}>
+    <lightning-combobox label="Preferred Hotel Type " name="hotel type" value={value} options={hotelOptions.data.values} onchange={handleSelection}>
+
+    </lightning-combobox>
+   </template><br/><br/>
+   <template if:true={records}>
+    <table>
+    <tr>
+    <th>AccountName</th>
+    <th>Industry</th>
+    </tr>
+    <template for:each={records} for:item="acc">
+        <tr key={acc.Id}>
+         <td>{acc.Name}</td>
+         <td>{selectedIndustryVal}</td>
+        </tr>
+    </template>
+    </table>
+  </template>
+
+   </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    
+        <lightning-card title="Search Hotels"  icon-name="standard:groups">
+         
+        <lightning-input label="City of Hotel" type="search" name="hcity" onchange={searchme}></lightning-input>
+        <lightning-input label="Type of Hotel" type="search" name="htype" onchange={searchmee}></lightning-input>
+     
+        
+    
+        <lightning-button label="SELECT" slot="actions" variant="brand-outline" title="navigate to another LWC" onclick={navigateToPaymentInfo}></lightning-button>
+        <div if:true={varbool}>
+          <lightning-datatable data={recc} 
+                               columns={columns} 
+                               key-field="id"></lightning-datatable>
+                               
+        </div>
+        </lightning-card>
+</template>

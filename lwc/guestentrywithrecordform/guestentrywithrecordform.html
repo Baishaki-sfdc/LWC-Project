@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Guest Entry Form"  icon-name="standard:groups">
+        <p class="slds-var-p-around_small">
+        <lightning-layout multiple-rows>
+
+            <lightning-layout-item padding="around-small" size="6">
+        <lightning-input label="First Name" type="text" onchange={fname}></lightning-input>
+        <lightning-input label="Last Name" type="text" onchange={lname}></lightning-input>
+        <lightning-input label="Phone" type="text" onchange={callphone}></lightning-input>
+        <lightning-input label="Email" type="Email" onchange={callemail}></lightning-input>
+        <lightning-input label="Check in date" type="date" onchange={callcheckin}></lightning-input>
+            </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="6">
+        <lightning-input label="Check out date" type="date" onchange={callcheckout}></lightning-input>
+        <lightning-input label="City of Hotel" type="text" onchange={callcity}></lightning-input>
+        <lightning-input type="number" label="Number of Adults" name="adults" onchange={calladults}></lightning-input>
+        <lightning-input type="number" label="Age of Adults" min="12" name="ageofadult" message-when-range-underflow="Min age is 12 yrs" onchange={calladults}></lightning-input>
+        <lightning-input type="number" label="Number of Children" onchange={callchild}></lightning-input>
+        <lightning-input type="number" label="Age of Children"  min="0" max="12" message-when-range-overflow="Please enter a correct age" message-when-range-underflow="Max age is 12 yrs" onchange={callchild}></lightning-input>
+        <lightning-combobox label="Preferred Hotel Type " name="hotel type" value={value} options={hotelOptions} onchange={handleSelection}></lightning-combobox>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12" class="slds-var-p-top_small">
+        <lightning-button label="Save" class="slds-align_absolute-center" variant="brand" onclick={createGuest}></lightning-button>
+         </lightning-layout-item>
+
+        </lightning-layout>
+        </p>
+        </lightning-card>
+    
+</template>  
